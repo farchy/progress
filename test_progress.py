@@ -5,9 +5,9 @@ from __future__ import print_function
 import random
 import time
 
-from progress.bar import (Bar, ChargingBar, FillingSquaresBar,
+from progress.bar import (Bar, ChargingBar, FillingSquaresBar, DottedBar,
                           FillingCirclesBar, IncrementalBar, ShadyBar, Random)
-from progress.spinner import Spinner, PieSpinner, MoonSpinner, LineSpinner
+from progress.spinner import Spinner, PieSpinner, MoonSpinner, LineSpinner, DotSpinner
 from progress.counter import Counter, Countdown, Stack, Pie
 
 
@@ -15,7 +15,7 @@ def sleep(t=0.01):
     t += t * random.uniform(-0.1, 0.1)  # Add some variance
     time.sleep(t)
 
-for bar_cls in (Bar, ChargingBar, FillingSquaresBar, FillingCirclesBar):
+for bar_cls in (Bar, ChargingBar, FillingSquaresBar, FillingCirclesBar, DottedBar):
     suffix = '%(index)d/%(max)d [%(elapsed)d / %(eta)d]'
     bar = bar_cls(bar_cls.__name__, suffix=suffix)
     for i in bar.iter(range(200)):
@@ -27,9 +27,9 @@ for bar_cls in (IncrementalBar, ShadyBar):
     for i in bar.iter(range(200)):
         sleep()
 
-for spin in (Spinner, PieSpinner, MoonSpinner, LineSpinner):
-    for i in spin(spin.__name__ + ' ').iter(range(100)):
-        sleep()
+for spin in (Spinner, PieSpinner, MoonSpinner, LineSpinner, DotSpinner):
+    for i in spin(spin.__name__ + ' ').iter(range(25)):
+        sleep(0.1)
     print()
 
 for singleton in (Counter, Countdown, Stack, Pie):
