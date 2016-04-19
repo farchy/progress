@@ -11,11 +11,9 @@ from progress.spinner import Spinner, PieSpinner, MoonSpinner, LineSpinner
 from progress.counter import Counter, Countdown, Stack, Pie
 
 
-def sleep():
-    t = 0.01
+def sleep(t=0.01):
     t += t * random.uniform(-0.1, 0.1)  # Add some variance
     time.sleep(t)
-
 
 for bar_cls in (Bar, ChargingBar, FillingSquaresBar, FillingCirclesBar):
     suffix = '%(index)d/%(max)d [%(elapsed)d / %(eta)d]'
