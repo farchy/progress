@@ -37,5 +37,9 @@ class MoonSpinner(Spinner):
     phases = ['◑', '◒', '◐', '◓']
 
 
+class DotSpinner(Spinner):
+    phases = (' ', '⡀', '⡄', '⡆', '⡇', '⡏', '⡟', '⡿', '⣿', '⢿', '⢻', '⢹', '⢸', '⢰', '⢠', '⢀')
+
+
 class LineSpinner(Spinner):
     phases = ['⎺', '⎻', '⎼', '⎽', '⎼', '⎻']
