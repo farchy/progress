@@ -85,6 +85,10 @@ class ShadyBar(IncrementalBar):
     phases = (' ', '░', '▒', '▓', '█')
 
 
+class DottedBar(IncrementalBar):
+    phases = (' ', '⡀', '⡄', '⡆', '⡇', '⡏', '⡟', '⡿', '⣿')
+
+
 class Random(WritelnMixin, Infinite):
     width = 32
     message = ''
